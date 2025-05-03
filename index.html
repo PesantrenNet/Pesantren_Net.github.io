@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaringan Pesantren Nusantara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f5f6f0; color: #333; line-height: 1.6; }
+        header {
+            background: linear-gradient(90deg, #1a3c34 0%, #2e856e 100%);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header .logo { font-size: 28px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        header nav ul { list-style: none; display: flex; gap: 25px; }
+        header nav ul li a { color: #fff; text-decoration: none; font-size: 16px; padding: 8px 15px; border-radius: 5px; transition: background 0.3s, color 0.3s; }
+        header nav ul li a:hover { background: #f4c430; color: #1a3c34; }
+        .cta-btn { background-color: #f4c430; padding: 10px 20px; border-radius: 25px; color: #1a3c34; font-weight: bold; text-decoration: none; transition: transform 0.3s; }
+        .cta-btn:hover { transform: scale(1.05); }
+        .hero {
+            background: url('img/bg.jpg') no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 500px;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            padding: 0 20px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 60, 52, 0.7);
+            z-index: 1;
+        }
+        .hero h1, .hero p, .hero .btn { position: relative; z-index: 2; }
+        .hero h1 { font-size: 48px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin-bottom: 15px; }
+        .hero p { font-size: 20px; max-width: 600px; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+        .hero .btn { padding: 12px 30px; font-size: 16px; text-decoration: none; border-radius: 25px; transition: transform 0.3s, background 0.3s; }
+        .btn-primary { background-color: #f4c430; color: #1a3c34; } /* Perbaikan typo */
+        .btn-secondary { background: transparent; border: 2px solid #f4c430; color: #f4c430; }
+        .hero .btn:hover { transform: scale(1.1); }
+        .features { padding: 60px 40px; text-align: center; background: #fff; border-bottom: 1px solid #d4e9e2; }
+        .features h2 { font-size: 32px; color: #1a3c34; margin-bottom: 40px; position: relative; }
+        .features h2::after { content: ''; width: 50px; height: 3px; background: #f4c430; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .feature-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .feature-item { background: #d4e9e2; padding: 30px; width: 300px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .feature-item:hover { transform: translateY(-10px); }
+        .feature-item h3 { margin-top: 15px; color: #1a3c34; font-size: 20px; }
+        .feature-item p { font-size: 14px; color: #555; }
+        .directory { padding: 60px 40px; text-align: center; background: #f5f6f0; }
+        .directory h2 { font-size: 32px; color: #1a3c34; margin-bottom: 40px; position: relative; }
+        .directory h2::after { content: ''; width: 50px; height: 3px; background: #f4c430; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .directory-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .directory-card { background: #fff; border: 1px solid #d4e9e2; width: 250px; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .directory-card:hover { transform: translateY(-10px); }
+        .directory-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+        .directory-card p { margin: 5px 0; font-size: 14px; color: #555; }
+        .directory-card a { color: #2e856e; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        .directory-card a:hover { color: #f4c430; }
+        .news { padding: 60px 40px; text-align: center; background: #fff; }
+        .news h2 { font-size: 32px; color: #1a3c34; margin-bottom: 40px; position: relative; }
+        .news h2::after { content: ''; width: 50px; height: 3px; background: #f4c430; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .news-item { max-width: 600px; margin: 20px auto; padding: 15px; background: #d4e9e2; border-radius: 5px; font-size: 16px; color: #1a3c34; }
+        .news a { display: inline-block; margin-top: 20px; color: #2e856e; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        .news a:hover { color: #f4c430; }
+        footer { background: linear-gradient(90deg, #1a3c34 0%, #2e856e 100%); color: #fff; padding: 30px; text-align: center; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); }
+        footer a { color: #f4c430; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        footer a:hover { color: #fff; }
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            header nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero { height: 400px; background-attachment: scroll; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .feature-item, .directory-card { width: 100%; max-width: 300px; }
+        }
+    </style>
+        <script>
+            function searchPesantren() {
+                const searchInput = document.getElementById('search-input').value.trim();
+                if (searchInput) {
+                    // Redirect ke halaman pencarian dengan query
+                    window.location.href = `direktori.html?search=${encodeURIComponent(searchInput)}`;
+                } else {
+                    alert('Silakan masukkan nama pesantren yang ingin dicari.');
+                }
+            }
+        </script>   
+</head>
+<body>
+    <header>
+        <div class="logo">PSNet</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="direktori.html">Direktori</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="promosi.html">Promosi</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <a href="cari.html" class="cta-btn">Cari Pesantren</a>
+    </header>
+
+    <section class="hero">
+        <h1>Menghubungkan Pesantren, Membangun Masa Depan</h1>
+        <p>Temukan pesantren terbaik dan jadilah bagian dari komunitas pendidikan Islam digital</p>
+        <div>
+            <a href="direktori.html" class="btn btn-primary">Jelajahi Direktori</a>
+            <a href="kontak.html" class="btn btn-secondary">Daftarkan Pesantren</a>
+        </div>
+    </section>
+    <section class="features">
+        <h2>Fitur Utama</h2>
+        <div class="feature-grid">
+            <div class="feature-item"><h3>Pesantren Tahfidz & Modern</h3><p>Cari pesantren sesuai kebutuhan Anda.</p></div>
+            <div class="feature-item"><h3>Kolaborasi Antar-Pesantren</h3><p>Bangun jejaring dan program bersama.</p></div>
+            <div class="feature-item"><h3>Promosi Digital</h3><p>Tampilkan keunggulan pesantren Anda.</p></div>
+        </div>
+    </section>
+    <section class="directory">
+        <h2>Pesantren Pilihan</h2>
+        <div class="directory-grid">
+            <div class="directory-card"><img src="img/bg.jpg" alt="Pesantren"><p><strong>Pesantren Al-Hidayah</strong></p><p>Tahfidz - Yogyakarta</p><a href="direktori.html">Lihat Detail</a></div>
+            <div class="directory-card"><img src="img/darussalam.jpg" alt="Pesantren"><p><strong>Pesantren Darussalam</strong></p><p>Modern - Bandung</p><a href="direktori.html">Lihat Detail</a></div>
+            <div class="directory-card"><img src="img/assalafi.webp" alt="Pesantren"><p><strong>Pesantren As-Salafi</strong></p><p>Salafi - Solo</p><a href="direktori.html">Lihat Detail</a></div>
+        </div>
+    </section>
+    <section class="news">
+        <h2>Kegiatan & Berita Terkini</h2>
+        <div class="news-item">Seminar Nasional Pesantren 2025 - 27 Feb 2025</div>
+        <div class="news-item">Pesantren XYZ Raih Penghargaan - 20 Feb 2025</div>
+        <a href="kegiatan.html">Lihat Semua Berita</a>
+    </section>
+    <footer>
+        <p>© 2025 Jaringan Pesantren Nusantara. <a href="kontak.html">Kontak Kami</a></p>
+    </footer>
+</body>
+</html>

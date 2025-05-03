@@ -1,0 +1,38 @@
+{
+    "pesantren": [
+        {
+            "id": 1,
+            "nama": "Pesantren Al-Hidayah",
+            "kategori": "Tahfidz",
+            "gambar": "alhidayah.jpg",
+            "lokasi": "Yogyakarta",
+            "tahun_berdiri": 1985,
+            "jumlah_santri": 500,
+            "akreditasi": "A",
+            "telepon": "+62 123 4567 890",
+            "email": "info@alhidayah.com",
+            "website": "www.alhidayahpesantren.ac.id",
+            "whatsapp": "+62 812 3456 7890",
+            "deskripsi": "Pesantren Al-Hidayah merupakan lembaga pendidikan Islam yang berfokus pada tahfidz Quran dengan sistem pembelajaran modern.",
+            "fasilitas": ["Perpustakaan", "Internet", "Lapangan Olahraga", "Kantin"],
+            "program": ["Tahfidz Quran", "Bahasa Arab", "Kajian Kitab Kuning"]
+        },
+        {
+            "id": 2,
+            "nama": "Pesantren Darussalam",
+            "kategori": "Modern",
+            "gambar": "darussalam.jpg",
+            "lokasi": "Bandung",
+            "tahun_berdiri": 2000,
+            "jumlah_santri": 750,
+            "akreditasi": "A+",
+            "telepon": "+62 234 5678 901",
+            "email": "info@darussalam.com",
+            "website": "www.darussalam.sch.id",
+            "whatsapp": "+62 813 4567 8901",
+            "deskripsi": "Pesantren modern dengan kurikulum terintegrasi antara ilmu agama dan sains teknologi.",
+            "fasilitas": ["Lab Komputer", "Auditorium", "Asrama", "Klinik"],
+            "program": ["IT & Programming", "Bahasa Inggris", "Entrepreneurship"]
+        }
+    ]
+}

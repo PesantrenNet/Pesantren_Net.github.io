@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pesantren - PSNet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PSNet</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="direktori.html">Direktori</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="promosi.html">Promosi</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+        <a href="cari.html" class="cta-btn">Cari Pesantren</a>
+    </header>
+
+    <section class="pesantren-detail">
+        <div class="container">
+            <div class="detail-header">
+                <h1 id="pesantren-nama">Nama Pesantren</h1>
+                <div class="meta-info">
+                    <span id="pesantren-kategori" class="category-badge">Kategori</span>
+                    <span id="pesantren-lokasi"><i class="fas fa-map-marker-alt"></i> Lokasi</span>
+                </div>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-main">
+                    <div class="gallery">
+                        <img id="pesantren-gambar" src="" alt="Foto Pesantren" class="main-image">
+                        <div class="thumbnail-container">
+                            <img src="img/alhidayah.png" alt="Thumbnail 1" class="thumbnail">
+                            <img src="img/alhidayah2.jpg" alt="Thumbnail 2" class="thumbnail">
+                            <img src="img/alhidayah3.jpg" alt="Thumbnail 3" class="thumbnail">
+                        </div>
+                    </div>
+                    
+                    <div class="description">
+                        <h2>Deskripsi Pesantren</h2>
+                        <p id="pesantren-deskripsi">Deskripsi lengkap pesantren akan ditampilkan di sini...</p>
+                        
+                        <div class="features">
+                            <h2>Fasilitas</h2>
+                            <ul id="pesantren-fasilitas">
+                                <li>Masjid</li>
+                                <li>Asrama</li>
+                                <li>Perpustakaan</li>
+                                <li>Laboratorium</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-sidebar">
+                    <div class="contact-box">
+                        <h3>Kontak</h3>
+                        <p id="pesantren-alamat"><i class="fas fa-home"></i> Alamat lengkap</p>
+                        <p id="pesantren-telepon"><i class="fas fa-phone"></i> Telepon</p>
+                        <p id="pesantren-email"><i class="fas fa-envelope"></i> Email</p>
+                        <p id="pesantren-website"><i class="fas fa-globe"></i> Website</p>
+                    </div>
+                    
+                    <div class="map-container">
+                        <h3>Lokasi</h3>
+                        <div id="pesantren-map" class="map">
+                            <!-- Peta akan ditampilkan di sini -->
+                            <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="#" class="cta-btn"><i class="fas fa-phone"></i> Hubungi</a>
+                        <a href="#" class="cta-btn secondary"><i class="fas fa-directions"></i> Petunjuk Arah</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-section">
+                <h2>Program Unggulan</h2>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <h3>Tahfidz Al-Qur'an</h3>
+                        <p>Program menghafal Al-Qur'an dengan metode khusus</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Bahasa Arab</h3>
+                        <p>Pembelajaran bahasa Arab intensif</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>Pengembangan Diri</h3>
+                        <p>Program pembentukan karakter santri</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Jaringan Pesantren Nusantara. <a href="kontak.html">Kontak Kami</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Ambil parameter ID dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const pesantrenId = urlParams.get('id');
+        
+        if (pesantrenData[pesantrenId]) {
+            const pesantren = pesantrenData[pesantrenId];
+            document.getElementById('nama-pesantren').textContent = pesantren.nama;
+        }
+
+        if (!pesantrenId || !pesantrenData[pesantrenId]) {
+            alert("Pesantren tidak ditemukan!");
+            window.location.href = "direktori.html"; // Redirect jika ID invalid
+        }
+
+        // Data dummy (nanti bisa diganti dengan data dari database)
+        const pesantrenData = {
+            '1': {
+                nama: "Pesantren Al-Hidayah",
+                kategori: "Tahfidz",
+                lokasi: "Yogyakarta",
+                gambar: "img/alhidayah.png",
+                deskripsi: "Pesantren Al-Hidayah merupakan lembaga pendidikan Islam yang berfokus pada tahfidz Al-Qur'an dan pengajaran ilmu-ilmu Islam secara komprehensif. Didirikan pada tahun 1995, pesantren ini telah meluluskan ratusan hafiz/hafizah yang tersebar di seluruh Indonesia.",
+                fasilitas: ["Masjid besar", "Asrama nyaman", "Perpustakaan lengkap", "Laboratorium bahasa", "Lapangan olahraga", "Kantin sehat"],
+                alamat: "Jl. Pendidikan No. 123, Yogyakarta",
+                telepon: "(0274) 1234567",
+                email: "info@alhidayah.id",
+                website: "www.alhidayah.id",
+                map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.123456789012!2d110.12345678901234!3d-7.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnMjQuNCJTIDExMMKwMDcnMjQuNCJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+            },
+            
+            '2': {
+                nama: "Pesantren Darussalam",
+                kategori: "Modern",
+                lokasi: "Bandung",
+                gambar: "img/darussalam.jpg",
+                deskripsi: "Pondok Pesantren Modern Darussalam merupakan salah satu lembaga pendidikan Islam yang berbasis pesantren dengan menerapkan sistem pesantren ala Pondok Modern Darussalam Gontor yang dipadukan dengan pesantren tradisional.",
+                fasilitas: ["Masjid besar", "Asrama nyaman", "Perpustakaan lengkap", "Laboratorium bahasa", "Lapangan olahraga", "Kantin sehat"],
+                alamat: " Bukit Permata Cimahi Blok G, Kecamatan Ngamprah, Kabupaten Bandung Barat.",
+                telepon: "0852-2029-1556",
+                Instagram: "@ppmdarussalam",
+                map: "https://www.google.com/maps/dir//Cimahi+Blok+G9,+Jl.+Raya+Bukit+Permata,+Cilame,+Kec.+Ngamprah,+Kabupaten+Bandung+Barat,+Jawa+Barat+40552/@-6.859626,107.4344209,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x2e68e48f890fc9dd:0x15b17be70868ed68!2m2!1d107.5168228!2d-6.859633?entry=ttu&g_ep=EgoyMDI1MDQyOC4wIKXMDSoASAFQAw%3D%3D"
+            },
+        };
+        
+        // Isi data ke halaman
+        if (pesantrenId && pesantrenData[pesantrenId]) {
+            const data = pesantrenData[pesantrenId];
+            document.getElementById('pesantren-nama').textContent = data.nama;
+            document.getElementById('pesantren-kategori').textContent = data.kategori;
+            document.getElementById('pesantren-lokasi').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${data.lokasi}`;
+            document.getElementById('pesantren-gambar').src = data.gambar;
+            document.getElementById('pesantren-deskripsi').textContent = data.deskripsi;
+            
+            // Fasilitas
+            const fasilitasList = document.getElementById('pesantren-fasilitas');
+            fasilitasList.innerHTML = '';
+            data.fasilitas.forEach(fasilitas => {
+                const li = document.createElement('li');
+                li.textContent = fasilitas;
+                fasilitasList.appendChild(li);
+            });
+            
+            // Kontak
+            document.getElementById('pesantren-alamat').innerHTML = `<i class="fas fa-home"></i> ${data.alamat}`;
+            document.getElementById('pesantren-telepon').innerHTML = `<i class="fas fa-phone"></i> ${data.telepon}`;
+            document.getElementById('pesantren-email').innerHTML = `<i class="fas fa-envelope"></i> ${data.email}`;
+            document.getElementById('pesantren-website').innerHTML = `<i class="fas fa-globe"></i> <a href="http://${data.website}" target="_blank">${data.website}</a>`;
+            
+            // Peta
+            document.querySelector('.map iframe').src = data.map;
+        }
+    </script>
+</body>
+</html>

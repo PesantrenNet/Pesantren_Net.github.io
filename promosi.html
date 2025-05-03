@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promosi & Kolaborasi</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f5f6f0; color: #333; line-height: 1.6; }
+        header { background: linear-gradient(90deg, #1a3c34 0%, #2e856e 100%); padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); position: sticky; top: 0; z-index: 100; }
+        header .logo { font-size: 28px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        header nav ul { list-style: none; display: flex; gap: 25px; }
+        header nav ul li a { color: #fff; text-decoration: none; font-size: 16px; padding: 8px 15px; border-radius: 5px; transition: background 0.3s, color 0.3s; }
+        header nav ul li a:hover { background: #f4c430; color: #1a3c34; }
+        .cta-btn { background-color: #f4c430; padding: 10px 20px; border-radius: 25px; color: #1a3c34; font-weight: bold; text-decoration: none; transition: transform 0.3s; }
+        .cta-btn:hover { transform: scale(1.05); }
+        .promo { padding: 60px 40px; text-align: center; background: #fff; }
+        .promo h1 { font-size: 36px; color: #1a3c34; margin-bottom: 40px; position: relative; }
+        .promo h1::after { content: ''; width: 50px; height: 3px; background: #f4c430; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .promo-gallery { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px; }
+        .gallery-item { width: 300px; background: #d4e9e2; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .gallery-item:hover { transform: scale(1.05); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; }
+        .gallery-item p { padding: 15px; font-size: 14px; color: #555; }
+        .promo-collaboration { max-width: 800px; margin: 0 auto; }
+        .promo-collaboration h2 { font-size: 28px; color: #1a3c34; margin-bottom: 20px; position: relative; }
+        .promo-collaboration h2::after { content: ''; width: 50px; height: 3px; background: #f4c430; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .collaboration-list { display: flex; flex-direction: column; gap: 30px; }
+        .collaboration-card { background: #fff; border: 1px solid #d4e9e2; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s; }
+        .collaboration-card:hover { transform: translateY(-10px); }
+        .collaboration-card h3 { font-size: 20px; color: #1a3c34; margin-bottom: 10px; }
+        .collaboration-card p { font-size: 14px; color: #555; margin-bottom: 10px; }
+        .collaboration-card .meta { font-size: 12px; color: #2e856e; margin-bottom: 10px; }
+        .collaboration-card a { color: #2e856e; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        .collaboration-card a:hover { color: #f4c430; }
+        .upload-btn { display: inline-block; margin-top: 30px; padding: 12px 30px; background-color: #f4c430; color: #1a3c34; text-decoration: none; border-radius: 25px; transition: transform 0.3s; }
+        .upload-btn:hover { transform: scale(1.05); }
+        footer { background: linear-gradient(90deg, #1a3c34 0%, #2e856e 100%); color: #fff; padding: 30px; text-align: center; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); }
+        footer a { color: #f4c430; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+        footer a:hover { color: #fff; }
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            header nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            .gallery-item { width: 100%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">PSNet</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="direktori.html">Direktori</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="promosi.html">Promosi</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+        <a href="cari.html" class="cta-btn">Cari Pesantren</a>
+    </header>
+    <section class="promo">
+        <h1>Promosi & Kolaborasi</h1>
+        <div class="promo-gallery">
+            <div class="gallery-item"><img src="img/kegiatan.jpg" alt="Kegiatan"><p>Santri belajar di Pesantren Al-Hidayah.</p></div>
+            <div class="gallery-item"><img src="img/seminar.jpg" alt="Seminar"><p>Seminar pendidikan Islam modern.</p></div>
+            <div class="gallery-item"><img src="img/lomba.jpg" alt="Tahfidz"><p>Lomba tahfidz Al-Qur’an.</p></div>
+        </div>
+        <div class="promo-collaboration">
+            <h2>Proposal Kolaborasi</h2>
+            <div class="collaboration-list">
+                <div class="collaboration-card"><h3>Pertukaran Santri</h3><p>Program untuk meningkatkan pengalaman santri.</p><div class="meta">Diajukan oleh: Pesantren Darussalam | 27 Februari 2025</div><a href="#">Lihat Detail</a></div>
+                <div class="collaboration-card"><h3>Seminar Bersama</h3><p>Kolaborasi untuk seminar tradisional.</p><div class="meta">Diajukan oleh: Pesantren As-Salafi | 25 Februari 2025</div><a href="#">Lihat Detail</a></div>
+            </div>
+            <a href="#" class="upload-btn" onclick="uploadProposal()">Unggah Proposal Baru</a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Jaringan Pesantren Nusantara. <a href="kontak.html">Kontak Kami</a></p>
+    </footer>
+    <script>
+        function uploadProposal() { alert('Fitur unggah proposal sedang dalam pengembangan!'); }
+    </script>
+</body>
+</html>
